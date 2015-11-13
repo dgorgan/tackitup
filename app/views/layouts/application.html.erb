@@ -7,6 +7,48 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <% if current_user %>
+            <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+            <% else %>
+            <%= link_to 'Signup', new_user_registration_path %>
+            <%= link_to 'Login', new_user_session_path %>
+            <% end %>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Tackitup</h1>
+        <p>Cake apple pie pie pie dragée chocolate biscuit chocolate bar topping. Sesame snaps jujubes tart gingerbread sugar plum. Powder tootsie roll icing lemon drops wafer tootsie roll pastry cotton candy caramels. Dessert gummi bears jelly gummies danish sweet bear claw bear claw fruitcake.
+Tart jelly fruitcake chocolate cake pudding tiramisu apple pie cookie chocolate bar. Croissant toffee pastry macaroon cake marshmallow. Wafer croissant wafer ice cream donut. Cupcake jelly beans candy canes jelly beans chocolate cake fruitcake lemon drops candy canes tart.</p>
+        <%= link_to 'New Pin', new_pin_path, class: "btn btn-primary btn-lg sexy-new-post" %>
+      </div>
+    </div>
+
 
 <%= yield %>
 
