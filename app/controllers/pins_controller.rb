@@ -9,20 +9,27 @@ class PinsController < ApplicationController
 
     def create
       @pin = current_user.pins.create!(pin_params)
-      redirect_to pins_path 
+      redirect_to pins_path
     end
 
     def show
-
+      @pin = Pin.find(params[:id])
     end
 
     def edit
+      @pin = Pin.find(params[:id])
     end
 
     def update
+      @pin = Pin.find(params[:id])
+      @pin.update(pin_params)
+      redirect_to pin_path(@pin)
     end
 
     def destroy
+      @pin = Pin.find(params[:id])
+      @pin.destroy
+      redirect_to pins_path
     end
 
     private
