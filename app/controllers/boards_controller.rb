@@ -1,47 +1,47 @@
-class BoardController < ApplicationController
-  
+class BoardsController < ApplicationController
+
   def index
-    @pins = Pin.all
+    @boards = Board.all
   end
 
   def new
-    @pin = Pin.new
+    @board = Board.new
   end
 
   def create
-    @pin = current_user.pins.create!(pin_params)
-    redirect_to pins_path
+    @board = current_user.boards.create!(board_params)
+    redirect_to boards_path
   end
 
   def show
-    @pin = Pin.find(params[:id])
+    @board = Board.find(params[:id])
   end
 
   def edit
-    @pin = Pin.find(params[:id])
-    if current_user.id != @pin.user_id
-      redirect_to pin_path(@pin)
+    @board = Board.find(params[:id])
+    if current_user.id != @board.user_id
+      redirect_to board_path(@board)
     end
   end
 
   def update
-    @pin = Pin.find(params[:id])
-    @pin.update(pin_params)
-    redirect_to pin_path(@pin)
+    @board = Board.find(params[:id])
+    @board.update(board_params)
+    redirect_to board_path(@board)
   end
 
   def destroy
-    @pin = Pin.find(params[:id])
-      if current_user.id != @pin.user_id
-        redirect_to pins_path
+    @board = Board.find(params[:id])
+      if current_user.id != @board.user_id
+        redirect_to boards_path
       end
-    @pin.destroy!
-    redirect_to pins_path
+    @board.destroy!
+    redirect_to boards_path
   end
 
   private
-  def pin_params
-    params.require(:pin).permit(:title, :image_url)
+  def board_params
+    params.require(:board).permit(:title, :board_image_url)
   end
 
 end

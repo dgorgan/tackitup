@@ -28,6 +28,11 @@
   margin: 1px;
 }
 
+.board-background {
+  margin-top: 10px;
+  background: #CCC;
+}
+
 .pin-background {
   background: #EEE;
 }
@@ -43,6 +48,15 @@
   color: tomato;
 }
 
+
 .pin-index-button {
   margin-top: 15px;
+}
+
+img {
+  max-width: 90%;
+}
+
+.sexy-new-post {
+  margin-bottom: 25px;
 }

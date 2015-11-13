@@ -1,13 +1,7 @@
-
-    <div class="well pin-background">
+  <div class="well pin-background">
     <h2><%= @pin.title %></h2>
-    <p><%= @pin.user.email %></p>
-    <%= image_tag @pin.image_url, class: 'pin-image' %>
-    <% if current_user %>
-      <% if current_user.id == @pin.user_id %>
-    <%= link_to 'Edit', edit_pin_path, class: 'btn btn-info' %>
-    <%= link_to 'Destroy', pin_path, class: 'btn btn-danger', method: :delete,
+    <%= image_tag @pin.image_url, class: 'pin-image' %><br><br>
+    <%= link_to 'Edit', edit_board_pin_path, class: 'btn btn-info' %>
+    <%= link_to 'Destroy', board_pin_path, class: 'btn btn-danger', method: :delete,
                     data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    <% end %>
   </div>

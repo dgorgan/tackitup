@@ -4,38 +4,38 @@ class PinsController < ApplicationController
     end
 
     def new
-      @pin = Pin.new
+      @board = Board.find(params[:board_id])
+      @pin = @board.pins.new
     end
 
     def create
-      @pin = current_user.pins.create!(pin_params)
-      redirect_to pins_path
+      @board = Board.find(params[:board_id])
+      @pin = @board.pins.create!(pin_params.merge(user: current_user))
+      redirect_to board_path(@board)
     end
 
     def show
       @pin = Pin.find(params[:id])
     end
 
+
     def edit
+      @board = Board.find(params[:board_id])
       @pin = Pin.find(params[:id])
-      if current_user.id != @pin.user_id
-        redirect_to pin_path(@pin)
-      end
     end
 
     def update
+      @board = Board.find(params[:board_id])
       @pin = Pin.find(params[:id])
       @pin.update(pin_params)
-      redirect_to pin_path(@pin)
+      redirect_to board_pin_path(@board, @pin)
     end
 
     def destroy
+      @board = Board.find(params[:board_id])
       @pin = Pin.find(params[:id])
-        if current_user.id != @pin.user_id
-          redirect_to pins_path
-        end
       @pin.destroy!
-      redirect_to pins_path
+      redirect_to board_path(@board)
     end
 
     private

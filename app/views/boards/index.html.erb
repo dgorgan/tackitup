@@ -1,0 +1,17 @@
+<%= link_to 'New Board', new_board_path, class: "btn btn-primary btn-lg sexy-new-post" %>
+
+<div class="well">
+  <div class="row text-center">
+        <% @boards.each do |board| %>
+        <div class="col-md-4">
+          <div class="pin-container">
+            <div class="well pin-background">
+            <h2><%= board.title %></h2>
+            <%= link_to image_tag(board.board_image_url, class: "pin-image"), board %>
+          </div>
+          </div>
+        </div>
+
+        <% end %>
+    </div>
+</div>

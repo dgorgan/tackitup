@@ -1,19 +1,19 @@
-<%= form_for [@board, @pin] do |f| %>
+<%= form_for @board do |f| %>
 
-  <% if @pin.errors.any? %>
+  <% if @board.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@pin.errors.count, "error") %> prohibited
+        <%= pluralize(@board.errors.count, "error") %> prohibited
         this article from being saved:
       </h2>
       <ul>
-        <% @pin.errors.full_messages.each do |msg| %>
+        <% @board.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  
+
 <div class="text-center">
   <p>
     <%= f.label :title %><br>
@@ -21,8 +21,8 @@
   </p>
 
   <p>
-    <%= f.label :image_url %><br>
-    <%= f.text_area :image_url %>
+    <%= f.label :board_image_url %><br>
+    <%= f.text_area :board_image_url %>
   </p>
 
   <p>
