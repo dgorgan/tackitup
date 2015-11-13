@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113143339) do
+ActiveRecord::Schema.define(version: 20151113184143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.string  "title"
+    t.string  "board_image_url"
+    t.integer "user_id"
+  end
 
   create_table "pins", force: :cascade do |t|
     t.string   "title"
