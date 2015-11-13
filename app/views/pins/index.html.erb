@@ -1,16 +1,19 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="well">
+  <div class="row text-center">
+        <% @pins.each do |pin| %>
+        <div class="col-md-4">
+          <div class="pin-container">
+            <div class="well pin-background">
+            <h2><%= pin.title %></h2>
+            <%= image_tag pin.image_url, class: "pin-image" %>
+            <%= link_to "Show", pin, class: "btn btn-primary pin-index-button" %>
+          </div>
+          </div>
+        </div>
 
-<div class="row text-center">
-      <% @pins.each do |pin| %>
-      <div class="col-md-4">
-          <h2><%= pin.title %></h2>
-          <%= image_tag pin.image_url, class: "pin-image" %>
-          <%= link_to "Show", pin, class: "btn btn-primary" %>
-      </div>
-
-      <% end %>
-  </div>
+        <% end %>
+    </div>
+</div>
       <!-- Example row of columns -->
       <!-- <div class="row text-center">
         <div class="col-md-4">

@@ -18,6 +18,9 @@ class PinsController < ApplicationController
 
     def edit
       @pin = Pin.find(params[:id])
+      if current_user.id != @pin.user_id
+        redirect_to pin_path(@pin)
+      end
     end
 
     def update
@@ -28,7 +31,10 @@ class PinsController < ApplicationController
 
     def destroy
       @pin = Pin.find(params[:id])
-      @pin.destroy
+        if current_user.id != @pin.user_id
+          redirect_to pins_path
+        end
+      @pin.destroy!
       redirect_to pins_path
     end
 
