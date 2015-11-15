@@ -77,3 +77,27 @@ img {
        -moz-border-radius: 8px;
             border-radius: 8px;
 }
+
+@media screen and (max-width: 480px) {
+
+    .btn-xlarge {
+      text-decoration: none !important;
+      padding: 18px 28px;
+      font-size: 32px; //change this to your desired size
+      line-height: normal;
+      -webkit-border-radius: 8px;
+         -moz-border-radius: 8px;
+              border-radius: 8px;
+             }
+
+      .btn {
+        font-size: 26px;
+      }
+
+      .mobile-style {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+
+}
