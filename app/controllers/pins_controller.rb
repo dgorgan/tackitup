@@ -1,11 +1,12 @@
 class PinsController < ApplicationController
-  before_action :set_pin
+    before_action :set_pin, only: [:edit, :show, :update, :destroy]
 
     def index
       @pins = Pin.all
     end
 
     def new
+      @board = Board.find(params[:board_id])
       @pin = @board.pins.new
     end
 
