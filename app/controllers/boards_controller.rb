@@ -39,9 +39,11 @@ class BoardsController < ApplicationController
     redirect_to boards_path
   end
 
+
   private
   def board_params
     params.require(:board).permit(:title, :board_image_url)
   end
+
 
 end
