@@ -4,6 +4,8 @@
   <title>Tackitup</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Shadows+Into+Light' %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:600italic' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -45,8 +47,11 @@
     <div class="jumbotron text-center">
       <div class="container">
         <div class="well">
-            <h1>TackItUp</h1>
+          <div class="">
+            <h1>TackItUp!</h1>
             <p>Sexy pins only please!</p>
+          </div>
+
 
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>

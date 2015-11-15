@@ -16,6 +16,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1, a.navbar-brand {
+
+    font-family: 'Shadows Into Light', cursive;
+
+  }
+
 .col-md-4 {
     color: black;
 }
@@ -49,6 +55,7 @@
 }
 
 
+
 .pin-index-button {
   margin-top: 15px;
 }
@@ -59,4 +66,14 @@ img {
 
 .sexy-new-post {
   margin-bottom: 25px;
+}
+
+.btn-xlarge {
+    text-decoration: none !important;
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
 }
