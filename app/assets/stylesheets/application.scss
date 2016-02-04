@@ -16,6 +16,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+.jumbotron {
+  background: url('http://res.freestockphotos.biz/pictures/5/5779-cartoon-bees-on-a-honeycomb-background-pv.jpg');
+}
+
+.well {
+  background: url('https://upload.wikimedia.org/wikipedia/en/b/bb/Graduated_Blue_Background.png');
+}
+
+
 h1, a.navbar-brand {
 
     font-family: 'Shadows Into Light', cursive;
@@ -44,7 +54,7 @@ h1, a.navbar-brand {
 }
 
 .pin-background {
-  background: #EEE;
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .notice, .alert {
